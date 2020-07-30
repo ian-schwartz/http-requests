@@ -4,7 +4,7 @@ import FullPost from "../../components/FullPost/FullPost";
 import NewPost from "../../components/FullPost/NewPost/NewPost";
 import "./Blog.css";
 // import axios from "axios";
-import axios from '../../axios'
+import axios from "../../axios";
 
 class Blog extends Component {
   state = {
@@ -53,7 +53,19 @@ class Blog extends Component {
     }
 
     return (
-      <div>
+      <div className="blog">
+        <header>
+          <nav>
+            <ul>
+              <li>
+                <a href="/">Home</a>
+              </li>
+              <li>
+                <a href="/new-post">New Post</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
         <section className="posts">{posts}</section>
         <section>
           <FullPost id={this.state.selectedPostId} />
