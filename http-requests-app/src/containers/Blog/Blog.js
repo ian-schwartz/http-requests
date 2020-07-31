@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import "./Blog.css";
-import Posts from "../Blog/Posts/Posts"
+import Posts from "../Blog/Posts/Posts";
+import { Route } from "react-router-dom";
 
 class Blog extends Component {
-
   render() {
-    
-
     return (
       <div className="blog">
         <header>
@@ -21,7 +19,8 @@ class Blog extends Component {
             </ul>
           </nav>
         </header>
-        <Posts />
+        {/* <Route exact path="/" render={() => <h1>Home</h1>} /> */}
+        <Route exact path="/" component={Posts} />
       </div>
     );
   }
