@@ -14,7 +14,7 @@ class Blog extends Component {
               <li>
                 <NavLink
                   exact
-                  to="/"
+                  to="/posts/"
                   activeClassName="my-active"
                   activeStyle={{
                     color: "#fa923f",
@@ -42,7 +42,7 @@ class Blog extends Component {
         {/* <Route exact path="/" render={() => <h1>Home</h1>} /> */}
         <Switch>
           <Route path="/new-post" component={NewPost} />
-          <Route path="/" component={Posts} />
+          <Route path="/posts" component={Posts} />
         </Switch>
       </div>
     );

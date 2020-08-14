@@ -32,7 +32,7 @@ class Posts extends Component {
   }
 
   postSelectedHandler = (id) => {
-    this.props.history.push("/" + id);
+    this.props.history.push("/posts/" + id);
   };
 
   render() {
@@ -40,7 +40,7 @@ class Posts extends Component {
     if (!this.state.error) {
       posts = this.state.posts.map((post) => {
         return (
-          // <Link to={'/' + post.id} key={post.id}>
+          // <Link to={'/posts/' + post.id} key={post.id}>
           <Post
             key={post.id}
             title={post.title}
@@ -55,7 +55,11 @@ class Posts extends Component {
     return (
       <div>
         <section className="posts">{posts}</section>
-        <Route exact path="/:id" component={FullPost} />
+        <Route
+          exact
+          path={this.props.match.url + "/:id"}
+          component={FullPost}
+        />
       </div>
     );
   }
